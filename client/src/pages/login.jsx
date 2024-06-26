@@ -34,7 +34,7 @@ function Login(){
             setUsername("");
             setPassword("");
             alert(data.message);
-            navigate('/todo');
+            navigate('/');
         })
         .catch((err)=>{
             setUsername("");
@@ -49,7 +49,7 @@ function Login(){
     },[]);
 
     return(
-        <div className="flex h-screen justify-center bg-gradient-to-r from-cyan-500 to-blue-500 ...">
+        <div className="flex h-screen justify-center bg-gradient-to-r from-cyan-300 to-blue-300 ...">
             <div className="max-w-sm border border-black bg-white rounded-lg p-5 drop-shadow-2xl m-auto">    
                 <div className="space-y-4">
                     <div className="font-bold text-lg">

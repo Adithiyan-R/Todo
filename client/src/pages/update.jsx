@@ -36,7 +36,7 @@ function Update(){
         })
         .then((data)=> {
             alert(data.message);
-            navigate('/todo');
+            navigate('/');
         })
         .catch((err)=> {
             alert(err);
@@ -49,7 +49,7 @@ function Update(){
     })
 
     function toTodos(){
-        navigate('/todo');
+        navigate('/');
     }
 
     function logout(){
@@ -64,14 +64,6 @@ function Update(){
 
     return(
         <div>
-            <div className='flex justify-between w-full h-15 bg-gradient-to-r from-cyan-500 to-blue-500 ...'> 
-                    <div className='p-3 ml-5 text-lg font-mono font-bold'>
-                        <button onClick={toTodos}>Todo</button>
-                    </div>
-                    <div className='p-3 mr-5 text-lg font-mono font-bold'>
-                        <button onClick={logout}>logout</button>
-                    </div>
-            </div>
             <div className="flex h-screen justify-center bg-gradient-to-r from-cyan-300 to-blue-300 ...">
                 <div className="max-w-sm border border-black bg-white rounded-lg p-5 drop-shadow-2xl m-auto">    
                     <div className="space-y-4">

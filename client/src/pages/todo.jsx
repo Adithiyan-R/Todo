@@ -97,7 +97,7 @@ function Todo(){
     function toTodos(){
         setToggle(false);
         setFilter("");
-        navigate('/todo');
+        navigate('/');
     }
 
     function filterTodos(){
@@ -107,15 +107,7 @@ function Todo(){
     if(log){
         return(
             <div>
-                <div className='flex justify-between w-full h-15 bg-gradient-to-r from-cyan-500 to-blue-500 ...'> 
-                    <div className='p-3 ml-5 text-lg font-mono font-bold'>
-                        <button onClick={toTodos}>Todo</button>
-                    </div>
-                    <div className='p-3 mr-5 text-lg font-mono font-bold'>
-                        <button onClick={logout}>logout</button>
-                    </div>
-                </div>
-                <div className='p-5 bg-gradient-to-r from-cyan-300 to-blue-300 ... min-h-[602px] h-full'>
+                <div className='p-5 bg-gradient-to-r from-cyan-300 to-blue-300 ... min-h-[643px] h-full'>
                     <div className='flex items-center justify-center'>
                         <input className='p-2 border  rounded-lg m-3 shadow-lg' type="text" value={task} placeholder='enter task' onChange={(e)=> setTask(e.target.value)} />
                         <input className='p-2 border  rounded-lg shadow-lg' type="text" value={description} placeholder='enter description' onChange={(e)=> setDescription(e.target.value)}/>
@@ -135,16 +127,7 @@ function Todo(){
     else{
         return(
             <div>
-                <div className='flex justify-between w-full h-15 bg-gradient-to-r from-cyan-500 to-blue-500 ...'> 
-                    <div className='p-3 ml-5 text-lg font-mono font-bold'>
-                        <button onClick={toTodos}>Todo</button>
-                    </div>
-                    <div className='p-3 mr-5 text-lg font-mono font-bold'>
-                        <button className='mr-5' onClick={goToSignup}>Signup</button>
-                        <button onClick={goToLogin}>Login</button>
-                    </div>
-                </div>
-                <div className='mt-100 bg-gradient-to-r from-cyan-300 to-blue-300 ... min-h-[602px] grid place-content-center ...'>
+                <div className='mt-100 bg-gradient-to-r from-cyan-300 to-blue-300 ... h-screen grid place-content-center ...'>
                     <div className='font-mono font-bold text-3xl'>
                         A to-do app to organize your life
                     </div>
