@@ -50,20 +50,6 @@ function Todo(){
         }
     },[]);
 
-    function goToLogin(){
-        navigate('/login');
-    }
-
-    function goToSignup(){
-        navigate('/signup');
-    }
-
-    function logout(){
-        localStorage.removeItem('jwt');
-        setLog(false);
-        alert("logged out");
-        navigate('/login');
-    }
 
     function addTodo(){
         fetch('http://localhost:3000/add',
@@ -92,12 +78,6 @@ function Todo(){
             alert(err);
             console.log(err);
         })
-    }
-
-    function toTodos(){
-        setToggle(false);
-        setFilter("");
-        navigate('/');
     }
 
     function filterTodos(){

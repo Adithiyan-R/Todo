@@ -48,19 +48,6 @@ function Update(){
             
     })
 
-    function toTodos(){
-        navigate('/');
-    }
-
-    function logout(){
-        localStorage.removeItem('jwt');
-        setLog(false);
-        setUsername("");
-        setPassword("");
-        setName("");
-        alert("user logged out");
-        navigate('/login')
-    }
 
     return(
         <div>
