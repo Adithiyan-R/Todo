@@ -14,7 +14,6 @@ app.use(
     cors({
       origin: 'https://todo-frontend-green-zeta.vercel.app',
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
-      allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
     })
   );
   
