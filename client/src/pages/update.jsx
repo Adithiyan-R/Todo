@@ -29,7 +29,8 @@ function Update(){
             body : JSON.stringify({
                 "task" : task,
                 "description" : description
-            })
+            }),
+            mode : 'cors'
         })
         .then((res)=> {
             return res.json();

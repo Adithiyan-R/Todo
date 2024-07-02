@@ -14,7 +14,7 @@ function Signup(){
     const setLog = useSetRecoilState(logState)
 
     const navigate = useNavigate();
-
+    
     async function signup(){
         fetch('https://todo-server-chi-weld.vercel.app/signup',
         {
@@ -29,7 +29,8 @@ function Signup(){
                 "password" : password,
                 "count" : 0,
                 "todos" : []
-            })
+            }),
+            mode : 'cors'
         })
         .then((res)=>{
             return res.json();

@@ -28,7 +28,8 @@ function Todo(){
                 'Accept' : 'application/json',
                 'content-type' : 'application/json',
                 'Authorization' : 'Bearer '+localStorage.getItem('jwt')
-            }
+            },
+            mode : 'cors'
         })
         .then((res)=>{
             return res.json();
@@ -63,7 +64,8 @@ function Todo(){
             body : JSON.stringify({
                 "task" : task,
                 "description" : description
-            })
+            }),
+            mode : 'cors'
         })
         .then((res)=>{
             return res.json();
@@ -129,7 +131,8 @@ function DisplayTodo(props){
                 'Content-Type' : 'application/json',
                 'accept' : 'application/json',
                 'Authorization' : 'Bearer '+ localStorage.getItem('jwt')
-            }
+            },
+            mode : 'cors'
         })
         .then((res)=>{
             return res.json();

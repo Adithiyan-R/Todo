@@ -24,7 +24,8 @@ function Login(){
             body : JSON.stringify({
                 "username" : username,
                 "password" : password,
-            })
+            }),
+            mode : 'cors'
         })
         .then((res)=>{
             return res.json();
