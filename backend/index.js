@@ -9,7 +9,15 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(bodyparser.json());
-app.use(cors());
+
+app.use(
+    cors({
+      origin: 'https://todo-frontend-green-zeta.vercel.app',
+      methods: ['GET', 'POST', 'PUT', 'DELETE'],
+      allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+    })
+  );
+  
 
 const UserSchema = new mongoose.Schema({
     name : String,
