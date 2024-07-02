@@ -197,13 +197,15 @@ app.delete('/delete/:id', authenticateJwt, async (req,res) => {
 
 app.get('/', authenticateJwt, async (req,res) =>{
 
-    const username = req.user;
+    // const username = req.user;
 
-    const user = await User.findOne({username});
+    // const user = await User.findOne({username});
     
-    var current_user_todos = user.todos;
+    // var current_user_todos = user.todos;
 
-    res.json(current_user_todos);
+    // res.json(current_user_todos);
+
+    res.send("Hello there! Main page");
 })
 
 app.listen(port, () => {
