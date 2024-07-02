@@ -20,9 +20,11 @@ function Login(){
             headers : {
                 'Accept' : 'application/json',
                 'Content-Type' : 'application/json',
-                'username' : username,
-                'password' : password
-            }
+            },
+            body : JSON.stringify({
+                "username" : username,
+                "password" : password,
+            })
         })
         .then((res)=>{
             return res.json();
@@ -39,7 +41,7 @@ function Login(){
         .catch((err)=>{
             setUsername("");
             setPassword("");
-            console.log(err);
+            console.log(err); 
             alert(err);
         })
     }
@@ -62,7 +64,7 @@ function Login(){
                         <input className="border border-black rounded-md p-2" placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)}></input>
                     </div>
                     <div>
-                        <button className="border p-2 rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 ..." onClick={login}>login</button>
+                        <button className="border p-2 rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 ..." onClick={login}>Login</button>
                     </div>
                     <div>
                         new here? <Link className="border p-2 rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 ..." to='/signup'>SignUp</Link>

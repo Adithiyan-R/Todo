@@ -90,8 +90,8 @@ app.post('/signup', async (req,res) =>{
 
 app.post('/login', async (req,res) =>{
 
-    var username = req.headers.username;
-    var password = req.headers.password;
+    var username = req.body.username;
+    var password = req.body.password;
 
     const verified = await User.findOne({username, password});
 
@@ -99,7 +99,7 @@ app.post('/login', async (req,res) =>{
     {
         const token = jwt.sign(username,SECRET_KEY);
 
-        res.json({message : "user logged in successfully",token});
+        res.json({message : "user logged in successfully ",token});
     }
     else
     {
