@@ -18,7 +18,7 @@ function Update(){
     const setLog = useSetRecoilState(logState);
 
     function updateTodo(){
-        fetch("http://localhost:3000/update/"+location.state.id,
+        fetch("https://todo-server-chi-weld.vercel.app/update/"+location.state.id,
         {
             method : 'PUT',
             headers : {

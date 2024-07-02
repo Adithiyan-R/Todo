@@ -14,7 +14,7 @@ function Login(){
     const navigate = useNavigate();
 
     async function login(){
-        fetch("http://localhost:3000/login",
+        fetch("https://todo-server-chi-weld.vercel.app/login",
         {
             method : 'POST',
             headers : {

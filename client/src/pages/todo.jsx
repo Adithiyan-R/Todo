@@ -52,7 +52,7 @@ function Todo(){
 
 
     function addTodo(){
-        fetch('http://localhost:3000/add',
+        fetch('https://todo-server-chi-weld.vercel.app/add',
         {
             method : 'POST',
             headers : {
@@ -122,7 +122,7 @@ function DisplayTodo(props){
     const navigate = useNavigate();
   
     function deleteTodo(){
-        fetch("http://localhost:3000/delete/"+props.id,
+        fetch("https://todo-server-chi-weld.vercel.app/delete/"+props.id,
         {
             method : 'DELETE',
             headers : {

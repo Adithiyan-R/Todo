@@ -16,7 +16,7 @@ function Signup(){
     const navigate = useNavigate();
 
     async function signup(){
-        fetch('http://localhost:3000/signup',
+        fetch('https://todo-server-chi-weld.vercel.app/signup',
         {
             method : 'POST',
             headers : {
