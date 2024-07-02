@@ -30,7 +30,8 @@ mongoose.connect('mongodb+srv://adithiyan:cluster0@cluster0.kz1zuik.mongodb.net/
 const SECRET_KEY = "secretkey";
 
 function authenticateJwt(req,res,next){
-    try{
+    if(auth)
+    {
         const auth = req.headers.authorization;
         const token = auth.split(' ')[1];
         if(token!="null")
@@ -47,13 +48,14 @@ function authenticateJwt(req,res,next){
             }
         }
         else{
-            return res.status(403).send("auth failed")
+            return res.status(403).send("auth failed");
         }
     }
-    catch(e){
-        console.log(e);
+    else
+    {
+        return res.status(403).send("auth failed");
     }
-    
+
 }
 
 app.post('/signup', async (req,res) =>{
@@ -197,13 +199,13 @@ app.delete('/delete/:id', authenticateJwt, async (req,res) => {
 
 app.get('/', authenticateJwt, async (req,res) =>{
 
-    // const username = req.user;
+    const username = req.user;
 
-    // const user = await User.findOne({username});
+    const user = await User.findOne({username});
     
-    // var current_user_todos = user.todos;
+    var current_user_todos = user.todos;
 
-    // res.json(current_user_todos);
+    res.json(current_user_todos);
 
     res.send("Hello there! Main page");
 })
