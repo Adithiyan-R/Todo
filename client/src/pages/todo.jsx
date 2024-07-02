@@ -21,7 +21,7 @@ function Todo(){
 
     async function getTodos(){
 
-        fetch("http://localhost:3000",
+        fetch("https://todo-server-chi-weld.vercel.app",
         {
             method : 'GET',
             headers : {
