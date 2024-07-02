@@ -30,9 +30,9 @@ mongoose.connect('mongodb+srv://adithiyan:cluster0@cluster0.kz1zuik.mongodb.net/
 const SECRET_KEY = "secretkey";
 
 function authenticateJwt(req,res,next){
+    const auth = req.headers.authorization;
     if(auth)
     {
-        const auth = req.headers.authorization;
         const token = auth.split(' ')[1];
         if(token!="null")
         {
