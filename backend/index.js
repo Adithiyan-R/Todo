@@ -21,28 +21,37 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model('User',UserSchema);
 
-mongoose.connect('mongodb+srv://adithiyan:cluster0@cluster0.kz1zuik.mongodb.net/' , {dbName:"todo"});
+mongoose.connect('mongodb+srv://adithiyan:cluster0@cluster0.kz1zuik.mongodb.net/', {
+    dbName: 'todo',
+    serverSelectionTimeoutMS: 60000, // Increase the timeout to 60 seconds
+    socketTimeoutMS: 60000 // Increase the socket timeout to 60 seconds
+  }); 
 
 const SECRET_KEY = "secretkey";
 
 function authenticateJwt(req,res,next){
-    const auth = req.headers.authorization;
-    const token = auth.split(' ')[1];
-    if(token!="null")
-    {
-        const user = jwt.verify(token,SECRET_KEY);
-        if(user)
+    try{
+        const auth = req.headers.authorization;
+        const token = auth.split(' ')[1];
+        if(token!="null")
         {
-            req.user = user;
-            next();
+            const user = jwt.verify(token,SECRET_KEY);
+            if(user)
+            {
+                req.user = user;
+                next();
+            }
+            else
+            {
+                res.status(401).send("authorization failed");
+            }
         }
-        else
-        {
-            res.status(401).send("authorization failed");
+        else{
+            return res.status(403).send("auth failed")
         }
     }
-    else{
-        return res.status(403).send("auth failed")
+    catch(e){
+        console.log(e);
     }
     
 }
