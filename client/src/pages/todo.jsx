@@ -27,7 +27,10 @@ function Todo(){
             headers : {
                 'Accept' : 'application/json',
                 'content-type' : 'application/json',
-                'Authorization' : 'Bearer '+localStorage.getItem('jwt')
+                'Authorization' : 'Bearer '+localStorage.getItem('jwt'),
+                'Access-Control-Allow-Origin' : '*',
+                'Access-Control-Allow-Methods' : 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
+                'Access-Control-Allow-Headers' : 'Content-Type, Authorization'
             },
             mode : 'cors'
         })
@@ -59,7 +62,10 @@ function Todo(){
             headers : {
                 'Content-Type' : 'application/json',
                 'Authorization' : 'Bearer '+ localStorage.getItem('jwt'),
-                'Accept' : 'application/json'
+                'Accept' : 'application/json',
+                'Access-Control-Allow-Origin' : '*',
+                'Access-Control-Allow-Methods' : 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
+                'Access-Control-Allow-Headers' : 'Content-Type, Authorization'
             },
             body : JSON.stringify({
                 "task" : task,
@@ -130,7 +136,10 @@ function DisplayTodo(props){
             headers : {
                 'Content-Type' : 'application/json',
                 'accept' : 'application/json',
-                'Authorization' : 'Bearer '+ localStorage.getItem('jwt')
+                'Authorization' : 'Bearer '+ localStorage.getItem('jwt'),
+                'Access-Control-Allow-Origin' : '*',
+                'Access-Control-Allow-Methods' : 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
+                'Access-Control-Allow-Headers' : 'Content-Type, Authorization'
             },
             mode : 'cors'
         })

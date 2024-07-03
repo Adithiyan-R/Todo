@@ -12,9 +12,10 @@ app.use(bodyparser.json());
 
 app.use(
     cors({
-      origin: '*',
+      origin: '*'
     })
   );
+
 
 const UserSchema = new mongoose.Schema({
     name : String,
