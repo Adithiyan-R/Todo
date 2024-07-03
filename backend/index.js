@@ -12,12 +12,9 @@ app.use(bodyparser.json());
 
 app.use(
     cors({
-      origin: 'https://todo-frontend-green-zeta.vercel.app',
-      methods: ['GET', 'POST', 'PUT', 'DELETE'],
+      origin: '*',
     })
   );
-
-app.options('*', cors());  
 
 const UserSchema = new mongoose.Schema({
     name : String,
